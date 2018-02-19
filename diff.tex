@@ -1,4 +1,7 @@
 % This is "sig-alternate.tex" V2.0 May 2012
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL old.tex   Mon Feb 19 08:58:20 2018
+%DIF ADD new.tex   Mon Feb 19 15:39:16 2018
 % This file should be compiled with V2.5 of "sig-alternate.cls" May 2012
 %
 % This example file demonstrates the use of the 'sig-alternate.cls'
@@ -52,6 +55,25 @@
 \usepackage{blkarray}
 \usepackage{mathpazo}
 \usepackage{amsmath}
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
 
 \begin{document}
 %
@@ -105,25 +127,25 @@
 %
 % 1st. author
 \alignauthor
-Mukesh Saini\\
+\DIFdelbegin \DIFdel{Mukesh Saini}\DIFdelend \DIFaddbegin \DIFadd{Prasad Kshirsagar}\DIFaddend \\
        \affaddr{Dept. of Computer Science}\\
        \affaddr{National University of Singapore}\\
        \email{mksaini@comp.nus.edu.sg}
 % 2nd. author
 \alignauthor
-Raghudeep Gadde\\
+\DIFdelbegin \DIFdel{Raghudeep Gadde}\DIFdelend \DIFaddbegin \DIFadd{Komal Chugh}\DIFaddend \\
        \affaddr{Dept. of ECE}\\
        \affaddr{National University of Singapore}\\
        \email{elerdg@nus.edu.sg}
 % 3rd. author
 \and  % use '\and' if you need 'another row' of author names
 % 4th. author
-\alignauthor Shuicheng Yan\\
+\alignauthor \DIFdelbegin \DIFdel{Shuicheng Yan}\DIFdelend \DIFaddbegin \DIFadd{Ram Krishna}\DIFaddend \\
        \affaddr{Dept. of ECE}\\
        \affaddr{National University of Singapore}\\
        \email{eleyans@nus.edu.sg}
 % 5th. author
-\alignauthor Wei Tsang Ooi\\
+\alignauthor \DIFdelbegin \DIFdel{Wei Tsang Ooi}\DIFdelend \DIFaddbegin \DIFadd{Vivek Verma}\DIFaddend \\
        \affaddr{Dept. of Computer Science}\\
        \affaddr{National University of Singapore}\\
        \email{ooiwt@comp.nus.edu.sg}
@@ -176,8 +198,8 @@ Understanding]: Video Analysis\\
 
 \section{Introduction}
 
-Active Voice :
-Worldwide shipment of camera phones were estimated to reach
+\DIFaddbegin \DIFadd{Changing Statement :
+}\DIFaddend Worldwide shipment of camera phones were estimated to reach
 1.14 billion in the year 2011 alone [1]. Furthermore, a survey of
 over 2,500 respondents by Photobucket reveals that 45% of the re-
 spondents use mobile devices to shoot video at least once weekly during the summer of 2011, validating the significant increase in
@@ -276,7 +298,7 @@ camera is selected. Further, video editing rules, which are subtle in
 the case of live performances, are not considered.\par
 \textbf{Contributions.} We now summarize our contributions in this pa-
 per as follows:
-\begin{itemize}
+ \begin{itemize} 
     \item We propose a state-based approach for shot selection that in-
 corporates the selection history in the decision process. Earlier methods select shots based on only currently available
 videos.
@@ -288,14 +310,15 @@ considers both previously selected videos and shot lengths.
 \item We propose a learning-based approach where the shot tran-
 sition probabilities and shot lengths are learned from profes-
 sionally edited videos.
-\end{itemize}
+ \end{itemize} 
 \textbf{Organization.} The rest of the paper is organized as follows.
 We provide a review of earlier work in Section 2. In Section 3 we
 describe proposed mashup framework. We evaluate our system in
 Section 4. The conclusions are provided in Section 5.
 
 \section{PREVIOUS WORK}
- There has been only few works on online camera selection. In
+ \DIFaddbegin \DIFadd{Changing Statement :
+ }\DIFaddend There has been only few works on online camera selection. In
 most of these works, videos are mainly selected to show the speak-
 ers. In the work by Machnicki and Rowe [9], an online lecture
 webcast system is presented in which the cameras that are focusing
@@ -354,12 +377,12 @@ through learning for online video selection for live performances.\par
 \par In this section, we first enumerate the design principles that we
 have followed in the development of MoViMash and then describe
 the framework. After an overview of MoViMash, we focus on in-
-dividual components.
-\subsection{Design Principles}
+dividual components.\DIFaddbegin \DIFadd{Changing Statement :
+}\DIFaddend \subsection{Design Principles}
 \par The end goal of the MoViMash is to produce a mashup that users
 like. To achieve this goal, we have followed a set of design princi-
 ples as follows:
-\begin{itemize}
+ \begin{itemize} 
     \item \textbf{Video Quality:} In our discussion, video quality includes
 sharpness, contrast, illumination, and blockiness (due to video
 compression). A good image quality gives pleasing experi-
@@ -390,13 +413,14 @@ include shooting angle, distance from the stage, and shot
 length.Therefore, in this work,
 we learn the shot transitions and lengths from professionally
 edited videos.
-\end{itemize}
+ \end{itemize} 
 \par The above mentioned design principles are met in our framework
 through various quality metrics and video selection/filtering phases,
 as described in the following section.
 
 \subsection{Framework}
-At every time instant, we have a number of videos to choose
+\DIFaddbegin \DIFadd{Changing Statement :
+}\DIFaddend At every time instant, we have a number of videos to choose
 from. Once we have chosen the video, we also need to decide when
 to switch to another video. Hence, there are two main questions
 involved here that need to be answered for combining videos: (1)
@@ -408,7 +432,7 @@ Figure 2 shows the block diagram of overall framework. The
 proposed framework consists of one offline learning phase and three online selection phases namely filtering, classification, and selec-
 tion. At any given time, the following steps are taken to select the
 most suitable video at current instant:\\
-\begin{enumerate}
+ \begin{enumerate} 
     \item \textbf{Filtering:} In the filtering step, we determine videos that are
 unusable by comparing occlusion, shakiness, and tilt scores
 against empirically determined thresholds. The remaining
@@ -428,7 +452,7 @@ and shakiness. The video with highest score is selected.
 \item \textbf{Shot Length:} The length of the video is selected based on
 learned distributions and video quality. A higher quality video
 is generally selected for longer time.
-\end{enumerate}
+ \end{enumerate} 
 \par While filtering and selection phase ensure view and video qual-
 ity, the classification and diversity ensure that we select videos
 recorded with different angles and viewing distances to provide a
@@ -466,7 +490,7 @@ dense edge points than the occluded area. To differentiate between
 homogeneous regions of the stage area, which could also have less edge density, and occluded area; we perform connected compo-
 nents on the edge image. Following are the steps of the occlusion
 detection in a given image I:
-\begin{itemize}
+ \begin{itemize} 
     \item Edge Detection: In the first step, we calculate the presence of
 an edge at each pixel location. Let I e be the resulting binary
 edge image:
@@ -523,8 +547,8 @@ score starts increasing. We obtained similar results for night videos
 also, which are not shown due to space limitation. We found that
 for a patch size of 20*15 pixels, videos with occlusion score more
 than 0.2 are very bad, so these are filtered in the framework.
-    
-\end{itemize}
+
+ \end{itemize} 
 
 \subsubsection{Tilt}
 \par In this work, we define tilt as the rotation of the camera around
@@ -533,7 +557,7 @@ by tilted cameras. Therefore, we detect the tilted camera views
 and filter them. Here we use the heuristic that for a horizontally
 placed camera, most of the lines in the view are horizontal, while
 an inclined view generally has non-horizontal lines. The following
-steps are taken to calculation tilt:\\
+steps are taken to calculation tilt: \DIFaddbegin \DIFadd{Changing Statement :}\DIFaddend \\
 \begin{figure}[htp]
 \includegraphics[width=8cm]{12.png}
 \caption{A general performance scenario}
@@ -544,7 +568,7 @@ steps are taken to calculation tilt:\\
 \caption{A general performance scenario}
 \label{fig:lion}
 \end{figure}
-\begin{itemize}
+ \begin{itemize} 
 
     \item Line Detection: We use Hough transform to detect the straight
 line in the image. Let l i  be the length of the i th line and o  i
@@ -559,7 +583,7 @@ weighted orientation and normalized by PI/4:
  S^t=\frac{ abs(\frac{1}{N^l}) \sum_{i=1}^{N^l} o_i*l_i}{\pi/4}
 \end{equation}
 where $N^l$ is the total number of lines in the image.
-\end{itemize}
+ \end{itemize} 
 \par An example of tilt calculation is shown in Figure 4; the upper
 row shows frames from the video and the figure in lower row shows
 occlusion scores. The video clip is recorded by a mobile phone
@@ -596,7 +620,7 @@ in creating mashup. We use professionally edited videos for this
 purpose. The rules are learned in terms of shooting angle, shoot-
 ing distance, and shot length. Following are the steps taken in the
 process of learning:\par
-\begin{itemize}
+ \begin{itemize} 
     \item At first, we divide the video into a sequence of shots and
 record shot length.
    \item Each shot is classified as right (R), left (L), or center (C)
@@ -613,7 +637,7 @@ tion probabilities for the above described six states.
 along with shot lengths (emission matrix) to an hidden Markov
 model (HMM). The HMM generates a sequence of shot states
 and their corresponding lengths.
-\end{itemize}
+ \end{itemize} 
 \begin{equation}
 \begin{pmatrix} 0 & 0.4 & 0.2 & 0.1 & 0.2 & 0.1\\ 0.6 & 0 & 0.1 & 0.1 & 0.1 & 0.1\\0.5 & 0.1 & 0 & 0.1 & 0.2 & 0.1\\ 0.2 & 0.2 & 0.4 & 0 & 0.1 & 0.1\\ \end{pmatrix}
 \end{equation}
@@ -645,7 +669,7 @@ camera angle, and video recording skills of the person. To produce
 aesthetically beautiful video, it is important to consider the quality
 of the videos.We are considering the following aspects to obtain
 video quality score:
-\begin{itemize}
+ \begin{itemize} 
     \item \textbf{Blockiness:} The blocking effect mainly comes due to poor
 quality of data compression. To measure blockiness, we take
 current image as sample and calculate its compression qual-
@@ -690,7 +714,7 @@ burnt pixels is calculated as follows:\\
 where $N^i$ is the total number of pixels in the image. In this
 case, a value of 1 represents best quality, i.e., no burnt pixels;
 while a value of 0 means at least 25\% \text{pixels are burnt.}
-\end{itemize}
+ \end{itemize} 
 \par The individual quality scores are multiplied to calculate overall
 video quality score $S^q$ , i.e.,
 \begin{equation}
@@ -709,13 +733,13 @@ i.e.,\\
 \end{equation}
 where $N^v$ is the number videos selected in the recent past. Each
 tuple has the following two entries:
-\begin{itemize}
+ \begin{itemize} 
     \item $I^h$ - Snapshot from the selected cameras at the time of selec-
 tion.
     \item $\bigtriangledown$ - The time for which the particular camera is selected. It
 is normalized between 0 to 1 by dividing each video duration
 by the total time over which history is stored.
-\end{itemize}
+ \end{itemize} 
 Let V S be the view similarity matrix:\\
 \begin{equation}
     V S = \{ v_{ij}|1 \leqslant i \leqslant n; 1 \leqslant j \leqslant N^v;  \forall_i=j,v_{i,j}  =1 \}
@@ -725,7 +749,7 @@ measure between current frame from the i th video and j th frame
 of the history. The motivation of defining the view similarity V S is
 to select video with different views. The overall steps of diversity
 calculation are as follows:
-\begin{enumerate}
+ \begin{enumerate} 
     \item Determine the view similarity matrix V S by comparing cur-
 rent frame with the frames stored in the history, i.e.,\\
 \begin{equation}
@@ -745,7 +769,7 @@ each of the current videos as follows:
 frame of the selected video in H. If we choose a scheme
 where each camera is selected only for fixed amount of time,
 we may just store the current frame of the selected video.
-\end{enumerate}
+ \end{enumerate} 
 \par The diversity scores for two candidate videos (Cam 1, Cam 2)
 and final mashup created using MoViMash for a performance (P3
 in Table 2) are shown in the Figure 5. Although we are showing
@@ -954,7 +978,7 @@ resolution is not critical for the current system components.
 mashup creation framework, MoViMash, for videos recorded by
 mobile devices. Based on the experiments and user study, we make
 following conclusions:\\
-\begin{itemize}
+ \begin{itemize} 
     \item MoViMash creates better quality mashups in comparison to
 human editor, and other methods that are mainly based on
 video quality.
@@ -969,7 +993,7 @@ recorded by mobile devices, particularly when there are large
 number of videos with varying quality.
   \item Proposed diversity model is able to incorporate both tempo-
 ral and spatial aspects of the selection history.
-\end{itemize}
+ \end{itemize} 
 \par In the future, we want to extensively evaluate individual com-
 ponents of the system with respect to end-to-end system delay and
 output mashup quality. As current mobiles are capable of record-
@@ -981,7 +1005,8 @@ number of videos simultaneously. Therefore, in the future we want
 to study the impact of the number of videos on the quality of the
 final mashup.
 \section*{Acknowledgment}
-This research is conducted under the NExT Search Center, sup-
+\DIFaddbegin \DIFadd{Changing Statement :
+}\DIFaddend This research is conducted under the NExT Search Center, sup-
 ported by the Singapore National Research Foundation and the In-
 teractive Digital Media R&D Program Office of Media Develop-
 ment Authority under research grant WBS:R-252-300-001-490.
